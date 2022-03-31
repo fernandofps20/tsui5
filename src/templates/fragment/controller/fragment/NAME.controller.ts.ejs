@@ -1,0 +1,21 @@
+import BaseController from "../BaseController";
+
+/**
+ * @namespace <%= props.appId %>.controller.fragment
+ */
+export default class <%= props.name %> extends BaseController {
+	parent: any;
+	fragment: any;
+	callback: any;
+	i18n: any;
+	public onBeforeShow(parent: any, fragment: any, callback: any, data: any) {
+		this.parent = parent;
+		this.fragment = fragment;
+		this.callback = callback;
+		this.i18n = this.parent.getModel("i18n").getResourceBundle();
+	}
+
+	public onClose() {
+		this.fragment.close();
+	}
+}

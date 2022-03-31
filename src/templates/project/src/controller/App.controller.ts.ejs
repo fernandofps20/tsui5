@@ -1,0 +1,14 @@
+import BaseController from "./BaseController";
+import AppService from "../service/AppService";
+
+/**
+ * @namespace <%= props.appId %>.controller
+ */
+export default class App extends BaseController {
+	private readonly appService: AppService = new AppService();
+
+	public onInit() : void {
+		// apply content density mode to root view
+		this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+	}
+}
